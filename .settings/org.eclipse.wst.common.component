@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="ooptest2">
+            
+    
+    <wb-module deploy-name="webapp">
+                        
+        
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+                        
+        
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="ooptest2"/>
-        <property name="java-output-path" value="/ooptest2/build/classes"/>
+                        
+        
+        <property name="java-output-path" value="/webapp/build/classes"/>
+        <property name="context-root" value="webapp"/>
+                    
+    
     </wb-module>
+        
+
 </project-modules>
