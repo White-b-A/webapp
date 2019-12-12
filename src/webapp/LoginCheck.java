@@ -1,45 +1,33 @@
 package webapp;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-
+import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class ooptest2
+ * Servlet implementation class LoginCheck
  */
-@WebServlet("/Webapp2")
-public class Webapp2 extends HttpServlet {
-	private String encoding = "UTF-8";;
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding(encoding);
-		response.setContentType("text/html; charset="+encoding);
+@WebServlet("/LoginCheck")
+public class LoginCheck extends HttpServlet {
 
-		PrintWriter out = response.getWriter();
-		out.println("<!DOCTYPE html>");
-		out.println("<html>");
-		out.println("<head>");
-		out.println("<link rel=\"stylesheet\" href=\"ooptest.css\">");
-		out.println("<title>メインメニュー</title>");
-		out.println("</head>");
-		out.println("<body>");
-		out.println("<h1>メインメニュー</h1>");
-		out.println("<div>");
-		out.println("<button id=\"b\" type=\"button\" onclick=\"location.href='./ooptest.html'\">"+"ログアウト");
-		out.println("</div>");
-		out.println("</body>");
-		out.println("</html>");
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String id = request.getParameter("userid");
+		String pass = request.getParameter("password");
+		HttpSession session = request.getSession(true);
 
-	}
+//		boolean check = user(id,pass);
+//		if(check==true) {
+			RequestDispatcher dispatch =request.getRequestDispatcher("Webapp2");
+//			dispatch.forward(request,response);
+//		}
+//
+//	}
 //	protected boolean user(String id,String pass) {
 //		if (id == null || id.length() == 0 || pass == null || pass.length() == 0){
 //		      return false;
@@ -64,7 +52,7 @@ public class Webapp2 extends HttpServlet {
 //				String msg = "ドライバのロードに失敗しました";
 //				return false;
 //			}
-//	}
+	}
 
 
 }
